@@ -1,0 +1,30 @@
+[project]
+name = "resume-ai-assistant"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "chromadb>=1.5.9",
+    "fastapi>=0.141.1",
+    "langchain-text-splitters>=1.1.2",
+    "ollama>=0.6.2",
+    "pydantic-settings>=2.15.0",
+    "pypdf>=6.19.0",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
